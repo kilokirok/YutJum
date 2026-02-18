@@ -8,11 +8,18 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
-      - run: npm install && npm run build # working-directory 없이 실행
+      
+      # 1. 의존성 설치 및 빌드 (경로 설정 없이 루트에서 바로 실행)
+      - name: Install and Build
+        run: |
+          npm install
+          npm run build
+          
+      # 2. Firebase 배포
       - uses: FirebaseExtended/action-hosting-deploy@v0
         with:
           repoToken: '${{ secrets.GITHUB_TOKEN }}'
           firebaseServiceAccount: '${{ secrets.FIREBASE_SERVICE_ACCOUNT_YUTJUM_6C577 }}'
           channelId: live
           projectId: yutjum-6c577
-          entryPoint: . # 현재 위치(루트)에서 실행
+          entryPoint: .  # 매우 중요: 현재 위치(.)를 바라보게 설정
