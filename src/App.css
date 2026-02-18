@@ -1,0 +1,159 @@
+/* src/App.css */
+@import url('https://fonts.googleapis.com/css2?family=Nanum+Myeongjo:wght@700&display=swap');
+
+body {
+  margin: 0;
+  font-family: 'Nanum Myeongjo', serif; /* 한국적인 폰트 적용 */
+  background-color: #fff7ed; /* 연한 주황색 배경 */
+}
+
+.container {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 24px;
+}
+
+.title {
+  font-size: 2rem;
+  font-weight: bold;
+  color: #9a3412; /* 진한 주황색 */
+  margin-top: 40px;
+  margin-bottom: 32px;
+  text-align: center;
+}
+
+.card {
+  width: 100%;
+  max-width: 400px;
+  background-color: white;
+  border-radius: 16px;
+  box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1);
+  padding: 32px;
+  border-top: 8px solid #fb923c; /* 주황색 테두리 */
+}
+
+.card-result {
+  width: 100%;
+  max-width: 400px;
+  background-color: white;
+  border-radius: 16px;
+  box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1);
+  padding: 32px;
+  border-top: 8px solid #4ade80; /* 초록색 테두리 */
+  animation: fadeIn 0.5s ease-in;
+}
+
+.instruction {
+  text-align: center;
+  color: #4b5563;
+  margin-bottom: 24px;
+  font-weight: 500;
+  line-height: 1.5;
+}
+
+.throws-container {
+  display: flex;
+  justify-content: center;
+  gap: 12px;
+  margin-bottom: 32px;
+}
+
+.throw-box {
+  width: 50px;
+  height: 50px;
+  border: 2px dashed #fdba74;
+  border-radius: 8px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #ea580c;
+  font-weight: bold;
+}
+
+.buttons-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 12px;
+}
+
+.btn-option {
+  background-color: #ffedd5;
+  color: #9a3412;
+  padding: 12px;
+  border-radius: 12px;
+  font-weight: 600;
+  border: none;
+  cursor: pointer;
+  transition: transform 0.1s;
+}
+
+.btn-option:hover {
+  background-color: #fed7aa;
+}
+
+.btn-option:active {
+  transform: scale(0.98);
+}
+
+.btn-option:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+.result-title {
+  font-size: 1.5rem;
+  font-weight: bold;
+  color: #15803d;
+  margin-bottom: 8px;
+}
+
+.result-desc {
+  color: #374151;
+  font-size: 1.1rem;
+  margin-bottom: 16px;
+  line-height: 1.6;
+}
+
+.advice-box {
+  background-color: #f0fdf4;
+  padding: 16px;
+  border-radius: 8px;
+  border-left: 4px solid #86efac;
+}
+
+.advice-text {
+  font-size: 0.9rem;
+  color: #166534;
+  font-style: italic;
+  margin: 0;
+}
+
+.btn-reset {
+  width: 100%;
+  margin-top: 32px;
+  background-color: #1f2937;
+  color: white;
+  padding: 12px;
+  border-radius: 12px;
+  font-weight: bold;
+  border: none;
+  cursor: pointer;
+}
+
+.btn-reset:hover {
+  background-color: #374151;
+}
+
+.footer {
+  margin-top: auto;
+  padding-top: 24px;
+  color: #9ca3af;
+  font-size: 0.875rem;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(10px); }
+  to { opacity: 1; transform: translateY(0); }
+}
