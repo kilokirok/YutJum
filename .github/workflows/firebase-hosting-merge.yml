@@ -6,13 +6,10 @@ name: Deploy to Firebase Hosting on merge
 jobs:
   build_and_deploy:
     runs-on: ubuntu-latest
-    # 모든 실행 단계를 YutJum 폴더 안에서 하라고 명시
-    defaults:
-      run:
-        working-directory: YutJum
     steps:
       - uses: actions/checkout@v4
       
+      # 루트에 있는 package.json을 바로 읽어서 빌드해
       - name: Install and Build
         run: |
           npm install
@@ -25,5 +22,5 @@ jobs:
           firebaseServiceAccount: '${{ secrets.FIREBASE_SERVICE_ACCOUNT_YUTJUM_6C577 }}'
           channelId: live
           projectId: yutjum-6c577
-          # Firebase 설정 파일도 YutJum 폴더 안에 있으니 경로 지정
-          entryPoint: YutJum
+          # Firebase 설정 파일들이 루트에 있으니 마침표(.)로 설정
+          entryPoint: .
